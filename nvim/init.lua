@@ -30,6 +30,9 @@ vim.cmd([[
   set relativenumber
 " Disable C-Z
   noremap <C-z> <Nop>
+" Better j and k
+  nnoremap j gj
+  nnoremap k gk
 " Allows you to use esc to use normal-terminal mode
   tnoremap <Esc> <C-\><C-n>
   tnoremap <M-[> <Esc>
