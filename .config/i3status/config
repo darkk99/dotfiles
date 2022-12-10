@@ -19,7 +19,7 @@ ethernet eth0 {
 }
 
 battery 0 {
-        format = "%status %percentage %remaining"
+        format = "%status %percentage"
 }
 
 run_watch DHCP {
