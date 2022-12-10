@@ -51,10 +51,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -63,10 +63,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+h split h
+bindsym $mod+Control+h split h
 
 # split in vertical orientation
-bindsym $mod+Shift+v split v
+bindsym $mod+Control+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -163,7 +163,7 @@ gaps outer 10
 # rounded corners
 border_radius 2
 # class                 border  bground text    indicator child_border
-client.focused          #6D5EFF #2A2462 #816EF1 #2A2462   #6D5EFF
+client.focused          #6D5EFF #2A2462 #816EF1 #2A2462   #cdc6f9
 client.focused_inactive #5e50b0 #1C1148 #816EF1 #1C1148   #2A2462
 client.unfocused        #5e50b0 #150D36 #5e50b0 #150D36   #2A2462
 client.urgent           #5e50b0 #900000 #816EF1 #900000   #2A2462
@@ -173,11 +173,10 @@ client.background       #150D36
 
 bar {
   status_command i3status
-  separator_symbol "  "
+  separator_symbol " "
   colors {
     background #2A2462
     statusline #816EF1
-    # I use whitespace as my separator, but I still kept the color in case you want to change the separator.
     separator  #352e7d
 
     focused_workspace  #2A2462 #2A2462 #816EF1
@@ -192,4 +191,4 @@ bindsym $mod+r exec --no-startup-id "dmenu_run -nf '#5e50b0' -nb '#2A2462' -sb '
 for_window [class="^.*"] border pixel 2
 exec_always --no-startup-id xrandr --output Virtual1 --mode 1920x1080
 # exec_always --no-startup-id feh --bg-fill ~/Wallpapers/Purple\ Galaxy.png
-exec_always --no-startup-id feh --bg-fill ~/Wallpapers/PurpleCity.jpg
+exec_always --no-startup-id feh --bg-fill ~/Wallpapers/PurpleCity.png
