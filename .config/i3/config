@@ -4,10 +4,6 @@ set $mod Mod1
 # is used in the bar {} block below.
 font pango:Cantarell 11
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -190,7 +186,7 @@ bar {
   }
 }
 
-bindsym $mod+r exec "dmenu_run -nf '#5e50b0' -nb '#2A2462' -sb '#2A2462' -sf '#816EF1' -fn 'monospace-10' -p 'search ->'
+bindsym $mod+r exec "dmenu_run -nf '#685aba' -nb '#2A2462' -sb '#2A2462' -sf '#816EF1' -fn 'monospace-10' -p 'search ->'
 for_window [class="^.*"] border pixel 0
 exec_always xrandr --output Virtual1 --mode 1920x1080
 exec_always feh --bg-fill ~/Wallpapers/Night\ Sky.png
