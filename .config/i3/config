@@ -1,8 +1,7 @@
 set $mod Mod1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango:Cantarell 11
+# font for the bar
+font pango:Cantarell 20
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -34,7 +33,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -130,7 +129,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # mode "resize" {
 #         # These bindings trigger as soon as you enter the resize mode
@@ -162,13 +161,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 gaps inner 10
 gaps outer 10
 # rounded corners
-border_radius 10
+border_radius 2
 # class                 border  bground text    indicator child_border
 client.focused          #6D5EFF #2A2462 #816EF1 #2A2462   #6D5EFF
-client.focused_inactive #6D5EFF #1C1148 #816EF1 #1C1148   #6D5EFF
-client.unfocused        #6D5EFF #150D36 #5e50b0 #150D36   #6D5EFF
-client.urgent           #6D5EFF #900000 #816EF1 #900000   #6D5EFF
-client.placeholder      #6D5EFF #1C1148 #816EF1 #1C1148   #6D5EFF
+client.focused_inactive #5e50b0 #1C1148 #816EF1 #1C1148   #2A2462
+client.unfocused        #5e50b0 #150D36 #5e50b0 #150D36   #2A2462
+client.urgent           #5e50b0 #900000 #816EF1 #900000   #2A2462
+client.placeholder      #5e50b0 #1C1148 #816EF1 #1C1148   #2A2462
 
 client.background       #150D36
 
@@ -186,7 +185,7 @@ bar {
   }
 }
 
-bindsym $mod+r exec "dmenu_run -nf '#685aba' -nb '#2A2462' -sb '#2A2462' -sf '#816EF1' -fn 'monospace-10' -p 'search ->'
-for_window [class="^.*"] border pixel 0
-exec_always xrandr --output Virtual1 --mode 1920x1080
-exec_always feh --bg-fill ~/Wallpapers/Night\ Sky.png
+bindsym $mod+r exec --no-startup-id "dmenu_run -nf '#5e50b0' -nb '#2A2462' -sb '#2A2462' -sf '#816EF1' -fn 'Cantarell-11' -p 'search ->'
+for_window [class="^.*"] border pixel 2
+exec_always --no-startup-id xrandr --output Virtual1 --mode 1920x1080
+exec_always --no-startup-id feh --bg-fill ~/Wallpapers/Purple\ Galaxy.png
