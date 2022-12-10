@@ -3,7 +3,7 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Prompt
-PS1="%F{red}%n %F{blue}in%F{red} %1~ %F{blue}->%f "
+PS1="%F{red}%1d%F{blue}>%f "
 
 
 # Aliases
