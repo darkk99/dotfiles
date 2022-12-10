@@ -1,5 +1,7 @@
 # Dependencies
 - `git clone https://aur.archlinux.org/yay.git & cd yay & makepkg -si`
+- `yay -S kitty`
+- `yay -S ttf-fantasque-sans-mono`
 - `yay -S feh`
 - `yay -S xorg-server xorg-xinit`
 - `yay -S lightdm lightdm-gtk-greeter`
