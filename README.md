@@ -1,8 +1,8 @@
 # Installing Dependencies
 ```bash
 $ git clone https://aur.archlinux.org/yay.git & cd yay & makepkg -si
+$ yay -S kitty zsh zsh-syntax-highlighting --needed
 $ yay -S nemo --needed
-$ yay -S kitty --needed
 $ yay -S ttf-fantasque-sans-mono --needed
 $ yay -S feh --needed
 $ yay -S xorg xorg-server xorg-xinit xorg-apps --needed
@@ -13,7 +13,7 @@ $ yay -S neovim neovim-plug --needed
 Or, in two commands:
 ```bash
 $ git clone https://aur.archlinux.org/yay.git & cd yay & makepkg -si
-$ yay -S nemo kittyttf-fantasque-sans-mono feh xorg xorg-server xorg-xinit xorg-apps lightdm lightdm-gtk-greeter i3-gaps-rounded-git i3blocks i3lock-color i3status neovim neovim-plug --needed
+$ yay -S nemo kitty zsh zsh-syntax-highlighting ttf-fantasque-sans-mono feh xorg xorg-server xorg-xinit xorg-apps lightdm lightdm-gtk-greeter i3-gaps-rounded-git i3blocks i3lock-color i3status neovim neovim-plug --needed
 ```
 # How to install the dotfiles
 ```bash
