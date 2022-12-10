@@ -173,10 +173,11 @@ client.background       #150D36
 
 bar {
   status_command i3status
-  separator_symbol " "
+  separator_symbol "​"
   colors {
     background #2A2462
     statusline #816EF1
+    # separator #2A2462
     separator  #352e7d
 
     focused_workspace  #2A2462 #2A2462 #816EF1
@@ -188,7 +189,6 @@ bar {
 }
 
 bindsym $mod+r exec --no-startup-id "dmenu_run -nf '#816EF1' -nb '#2A2462' -sb '#816EF1' -sf '#2A2462' -fn 'Cantarell-15' -p 'search>'
-
 for_window [class="^.*"] border pixel 2
 exec_always --no-startup-id xrandr --output Virtual1 --mode 1920x1080
 # exec_always --no-startup-id feh --bg-fill ~/Wallpapers/Purple\ Galaxy.png
