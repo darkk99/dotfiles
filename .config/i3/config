@@ -172,10 +172,13 @@ client.placeholder      #5e50b0 #1C1148 #816EF1 #1C1148   #2A2462
 client.background       #150D36
 
 bar {
+  status_command i3status
+  separator_symbol "  "
   colors {
     background #2A2462
     statusline #816EF1
-    separator  #2A2462
+    # I use whitespace as my separator, but I still kept the color in case you want to change the separator.
+    separator  #352e7d
 
     focused_workspace  #2A2462 #2A2462 #816EF1
     active_workspace   #2A2462 #2A2462 #816EF1
