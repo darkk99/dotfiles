@@ -7,5 +7,4 @@
 - yay -S neovim neovim-plug
 # How to install
 - git clone https://https://github.com/darkk99/dotfiles
-- cd dotfiles
-- ./install.sh
+- mv dotfiles/* ~/*
