@@ -17,6 +17,6 @@ $ yay -S nemo kittyttf-fantasque-sans-mono feh xorg xorg-server xorg-xinit xorg-
 ```
 # How to install the dotfiles
 ```bash
-git clone https://https://github.com/darkk99/dotfiles
-mv dotfiles/* ~/*
+$ git clone https://https://github.com/darkk99/dotfiles
+$ mv ~/dotfiles/* ~/*
 ```
