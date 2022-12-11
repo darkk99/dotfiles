@@ -1,5 +1,6 @@
 vim.cmd([[
-" Plugins
+
+" Plugins "
   call plug#begin()
   Plug 'tpope/vim-commentary'
   Plug 'ntpeters/vim-better-whitespace'
@@ -9,18 +10,18 @@ vim.cmd([[
   Plug 'https://github.com/frazrepo/vim-rainbow'
   Plug 'rose-pine/neovim', {'as': 'rose-pine', 'tag': 'v1.*'}
   let g:rainbow_active = 1
-" Auto Completion
+" Auto Completion "
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   call plug#end()
 " Make <CR> to accept selected completion item or notify coc.nvim to format
-	inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" Tab Size (2)
+	inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()"
+                              \:"\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Tab Size (2) "
   set tabstop=2
   set softtabstop=2
   set shiftwidth=2
   set expandtab
-" Appearance
+" Appearance "
   let &t_ut=''
   colorscheme rose-pine
   set termguicolors
@@ -28,18 +29,18 @@ vim.cmd([[
   set showcmd
   set encoding=utf-8
   set relativenumber
-" Disable C-Z
+" Disable C-Z "
   noremap <C-z> <Nop>
-" Better j and k
+" Better j and k "
   nnoremap j gj
   nnoremap k gk
-" Allows you to use esc to use normal-terminal mode
+" Allows you to use esc to use normal-terminal mode by pressing ESC "
   tnoremap <Esc> <C-\><C-n>
   tnoremap <M-[> <Esc>
   tnoremap <C-v><Esc> <Esc>
-" Disables mouse
+" Disables mouse "
   set mouse =
-" Opens new terminal window (vertically split)
+" Opens new terminal window (vertically split) "
   noremap <C-q> :vs<Enter><C-w>l:term<Enter>
 ]])
 vim.api.nvim_create_autocmd("ColorScheme", {
@@ -67,12 +68,12 @@ vim.opt.listchars:append("space:·")
 vim.opt.listchars:append("eol:↴")
 
 require("indent_blankline").setup {
-  space_char_blankline = " ",
+  space_char_blankline ="",
   char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-    "IndentBlanklineIndent3",
-    "IndentBlanklineIndent4",
-    "IndentBlanklineIndent5",
+   "IndentBlanklineIndent1",
+   "IndentBlanklineIndent2",
+   "IndentBlanklineIndent3",
+   "IndentBlanklineIndent4",
+   "IndentBlanklineIndent5",
   },
 }
