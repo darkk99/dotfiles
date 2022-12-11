@@ -7,13 +7,14 @@ $ yay -S ttf-fantasque-sans-mono --needed
 $ yay -S feh --needed
 $ yay -S xorg xorg-server xorg-xinit xorg-apps --needed
 $ yay -S lightdm lightdm-gtk-greeter --needed
-$ yay -S i3-gaps-rounded-git i3blocks i3lock-color i3status --needed
+$ yay -S i3 i3blocks i3lock-color i3status --needed
+$ yay -S picom-ibhagwan-git
 $ yay -S neovim neovim-plug --needed
 ```
 Or, in two commands:
 ```bash
 $ git clone https://aur.archlinux.org/yay.git & cd yay & makepkg -si
-$ yay -S nemo kitty zsh zsh-syntax-highlighting ttf-fantasque-sans-mono feh xorg xorg-server xorg-xinit xorg-apps lightdm lightdm-gtk-greeter i3-gaps-rounded-git i3blocks i3lock-color i3status neovim neovim-plug --needed
+$ yay -S nemo kitty zsh zsh-syntax-highlighting ttf-fantasque-sans-mono feh xorg xorg-server xorg-xinit xorg-apps lightdm lightdm-gtk-greeter i3-gaps i3blocks i3lock-color i3status picom-ibhagwan-git neovim neovim-plug --needed
 ```
 # How to install the dotfiles
 ```bash
