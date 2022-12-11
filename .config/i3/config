@@ -1,7 +1,7 @@
 set $mod Mod1
 
 # font for the bar
-font pango:Cantarell 20
+font pango:Cantarell 15
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -189,9 +189,9 @@ bar {
   }
 }
 
-bindsym $mod+r exec --no-startup-id "dmenu_run -nf '#816EF1' -nb '#2A2462' -sb '#816EF1' -sf '#2A2462' -fn 'Cantarell-15' -p 'search>'
+bindsym $mod+r exec --no-startup-id "dmenu_run -nf '#816EF1' -nb '#2A2462' -sb '#816EF1' -sf '#2A2462' -fn 'Cantarell-12' -p 'search>'
 for_window [class="^.*"] border pixel 0
-exec_always --no-startup-id xrandr --output Virtual1 --mode 1920x1080
-# exec_always --no-startup-id feh --bg-fill ~/Wallpapers/Purple\ Galaxy.png
-exec_always --no-startup-id feh --bg-fill ~/Wallpapers/PurpleCity.png
+exec_always --no-startup-id xrandr -s 1920x1080
+exec_always --no-startup-id feh --bg-fill ~/Wallpapers/Purple\ Galaxy.png
+# exec_always --no-startup-id feh --bg-fill ~/Wallpapers/PurpleCity.png
 exec_always --no-startup-id picom
