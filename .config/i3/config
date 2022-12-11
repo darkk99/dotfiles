@@ -161,7 +161,8 @@ bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 gaps inner 10
 gaps outer 10
 # rounded corners
-border_radius 2
+# border_radius 10
+
 # class                 border  bground text    indicator child_border
 client.focused          #6D5EFF #2A2462 #816EF1 #2A2462   #cdc6f9
 client.focused_inactive #5e50b0 #1C1148 #816EF1 #1C1148   #2A2462
@@ -189,7 +190,8 @@ bar {
 }
 
 bindsym $mod+r exec --no-startup-id "dmenu_run -nf '#816EF1' -nb '#2A2462' -sb '#816EF1' -sf '#2A2462' -fn 'Cantarell-15' -p 'search>'
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 exec_always --no-startup-id xrandr --output Virtual1 --mode 1920x1080
 # exec_always --no-startup-id feh --bg-fill ~/Wallpapers/Purple\ Galaxy.png
 exec_always --no-startup-id feh --bg-fill ~/Wallpapers/PurpleCity.png
+exec_always --no-startup-id picom
