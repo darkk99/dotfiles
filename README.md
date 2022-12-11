@@ -2,6 +2,7 @@
 ```bash
 $ git clone https://aur.archlinux.org/yay.git & cd yay & makepkg -si
 $ yay -S kitty zsh zsh-syntax-highlighting --needed
+$ yay -S xclip
 $ yay -S nemo --needed
 $ yay -S ttf-fantasque-sans-mono --needed
 $ yay -S feh --needed
