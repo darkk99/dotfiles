@@ -21,6 +21,6 @@ $ yay -S nemo kitty zsh zsh-syntax-highlighting ttf-fantasque-sans-mono feh xorg
 ```
 # How to install the dotfiles
 ```bash
-$ git clone https://https://github.com/darkk99/dotfiles
+$ git clone https://github.com/darkk99/dotfiles
 $ mv ~/dotfiles/* ~/*
 ```
