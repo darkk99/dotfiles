@@ -2,6 +2,7 @@
 ```bash
 $ sudo pacman -S git
 $ git clone https://aur.archlinux.org/yay.git & cd yay & makepkg -si
+$ yay -S colorls
 $ yay -S kitty zsh zsh-syntax-highlighting
 $ yay -S xclip
 $ yay -S nemo 
