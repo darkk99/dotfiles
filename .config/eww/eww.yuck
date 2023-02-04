@@ -75,10 +75,10 @@
   :exclusive true
   :focusable false
     ; :geometry (geometry :x "12px"
-    :geometry (geometry :x "11px"
+    :geometry (geometry :x "0px"
     :y "0%"
     :width "0%"
-    :height "1058px"
+    :height "1080px"
     :anchor "left center")
   :stacking "fg"
   :reserve (struts :distance "0"
@@ -91,10 +91,10 @@
   :exclusive true
   :focusable false
     ; :geometry (geometry :x "12px"
-    :geometry (geometry :x "11px"
+    :geometry (geometry :x "0px"
     :y "0%"
     :width "0%"
-    :height "1418"
+    :height "1440px"
     :anchor "left center")
   :stacking "fg"
   :reserve (struts :distance "0"
