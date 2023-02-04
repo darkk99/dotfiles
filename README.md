@@ -2,4 +2,10 @@
 My dotfiles for Crystal Linux. Hyprland
 
 # **INSTALL**
-cp -r ./dotfiles-crystal ~/.config
+## Note: I have not tested this command. Proceed with caution
+
+```
+$ cd
+$ ln -s .bashrc ./
+$ cd .config
+$ ln -s ~/dotfiles-crystal/.config/* ./
