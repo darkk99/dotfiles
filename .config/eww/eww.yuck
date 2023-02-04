@@ -1,0 +1,103 @@
+(deflisten workspace "scripts/workspace")
+(defwidget workspaces []
+  (literal :content workspace))
+
+(defpoll layout :interval "0.1s" "scripts/getlayout")
+(defwidget keyboard []
+  (box :orientation "v"
+    :class "keyboard"
+    :valign "start"
+    (button :class "layout" layout)))
+
+(defpoll hour :interval "1s" "date '+%I'")
+(defpoll min :interval "1s" "date '+%M'")
+
+(defwidget clock []
+  (box :orientation "v"
+    :class "clock"
+    :valign "end"
+    (button :class "hour" hour)
+    (button :class "minute" min)))
+
+(defpoll battery-amount :interval "1s" "scripts/battery")
+(defwidget battery []
+  (literal :content battery-amount))
+
+; (defpoll current-volume :interval "0.1s" "amixer get Master | grep Right: | awk -F '[][]' '{print $2}' | tr -d '%'")
+; (defwidget volume []
+;   (box :orientation "v" ;     :class "volume-box"
+;     :valign "start"
+;     (button :class "volume" current-volume)))
+
+
+(defwidget top []
+  (box :orientation "v"
+    :class "top"
+    :space-evenly "false"
+    :valign "start"
+    (workspaces)))
+
+(defwidget bottom-top []
+  (box :orientation "v"
+    :class "bottom-top"
+    :space-evenly "false"
+    :valign "start"
+    (keyboard)
+    (battery)))
+
+(defwidget bottom-bottom []
+  (box :orientation "v"
+    :class "bottom-bottom"
+    :space-evenly "false"
+    :valign "start"
+    ; (volume)
+    (clock)))
+
+(defwidget bottom []
+  (box :orientation "v"
+    :class "bottom"
+    :space-evenly "false"
+    :valign "end"
+    (bottom-top)
+    (bottom-bottom)))
+
+
+(defwidget bar []
+  (box :class "eww_bar"
+    :orientation "v"
+    :vexpand "false"
+    :hexpand "false"
+    (top)
+    (bottom)))
+
+(defwindow bar
+  :monitor 0
+  :exclusive true
+  :focusable false
+    ; :geometry (geometry :x "12px"
+    :geometry (geometry :x "11px"
+    :y "0%"
+    :width "0%"
+    :height "1058px"
+    :anchor "left center")
+  :stacking "fg"
+  :reserve (struts :distance "0"
+    :side "left")
+  :wm-ignore false
+  (bar))
+
+(defwindow bar1
+  :monitor 1
+  :exclusive true
+  :focusable false
+    ; :geometry (geometry :x "12px"
+    :geometry (geometry :x "11px"
+    :y "0%"
+    :width "0%"
+    :height "1418"
+    :anchor "left center")
+  :stacking "fg"
+  :reserve (struts :distance "0"
+    :side "left")
+  :wm-ignore false
+  (bar))

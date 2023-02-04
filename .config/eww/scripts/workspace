@@ -1,0 +1,54 @@
+#!/bin/sh
+
+function workspaces {
+  for num in 1 2 3 4 5 6 7 8 9 10; do
+    unset -v a"$num"
+    unset -v f"$num"
+    unset -v m"$num"
+  done
+
+  for num in $(hyprctl workspaces | grep ID | awk '{print $3}'); do
+    export a"$num"="t"
+  done
+
+  wsn=-1
+  while IFS=$'\n' read -ra ADDR; do
+    for i in "${ADDR[@]}"; do
+      if [[ "$i" == *"ID"* ]]; then
+        wsn=$(echo "$i" | awk '{print $3}')
+      elif [[ "$i" == *"hasfullscreen: 1"* ]]; then
+        export m"$wsn"="t"
+      fi
+    done
+  done <<< "$(hyprctl workspaces)"
+
+  if [ "$(hyprctl monitors | grep focused | sed 's/focused://g' | sed 's/ //g' | head -n1 | xargs)" == 'yes' ]; then
+    currentWorkspace="$(hyprctl monitors | grep 'workspace' | awk '{print $3}' | sed -n '1 p')"
+  else
+    currentWorkspace="$(hyprctl monitors | grep 'workspace' | awk '{print $3}' | sed -n '2 p')"
+  fi
+
+  # if [[ -z currentWorkspace ]]; then
+  #   export f"$(hyprctl monitors | grep active | awk '{print $3}' | sed -n '2p')"="t"
+  # else
+    export f"$currentWorkspace"="t"
+  # fi
+
+  echo "(box :class \"workspaces\" :orientation \"v\" :spacing 0 :space-evenly \"true\"" \
+    "(button :class \"ws$a1$f1 wsm$m1\" 1)" \
+    "(button :class \"ws$a2$f2 wsm$m2\" 2)" \
+    "(button :class \"ws$a3$f3 wsm$m3\" 3)" \
+    "(button :class \"ws$a4$f4 wsm$m4\" 4)" \
+    "(button :class \"ws$a5$f5 wsm$m5\" 5)" \
+    "(button :class \"ws$a6$f6 wsm$m6\" 6)" \
+    "(button :class \"ws$a7$f7 wsm$m7\" 7)" \
+    "(button :class \"ws$a8$f8 wsm$m8\" 8)" \
+    "(button :class \"ws$a9$f9 wsm$m9\" 9)" \
+    "(button :class \"ws$a10$f10 wsm$m10\" 0)" \
+    ")"
+}
+
+workspaces
+socat -u UNIX-CONNECT:/tmp/hypr/"$HYPRLAND_INSTANCE_SIGNATURE"/.socket2.sock - | while read -r event; do
+  workspaces
+done
