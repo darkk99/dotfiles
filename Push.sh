@@ -5,6 +5,6 @@
 # file I use to easily push all my changes
 
 git pull
-git add $(eval $(which ls))
+git add .
 git commit
 git push
