@@ -7,6 +7,6 @@ My dotfiles for Crystal Linux. Hyprland
 ```
 cd
 ln -s .bashrc ./
-cd .config
+cd ~/.config
 ln -s ~/dotfiles-crystal/.config/* ./
 ```
