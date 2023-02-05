@@ -1,11 +1,11 @@
-# dotfiles-crystal
-My dotfiles for Crystal Linux. Hyprland
+i# dotfiles-crystal
+My dotfiles for Crystal/Arch Linux. Hyprland
 
 # **INSTALL**
 
 ```
 cd
-ln -s .bashrc ./
+ln -s dotfiles-crystal/.bashrc ./
 cd ~/.config
 ln -s ~/dotfiles-crystal/.config/* ./
 ```
