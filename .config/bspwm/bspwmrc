@@ -2,15 +2,15 @@
 
 
 # border colors
-bspc config focused_border_color "\#ffffff"
-bspc config normal_border_color "\#ffffff"
+bspc config focused_border_color \#cba6f7
+bspc config normal_border_color \#1e1e2e
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+bspc monitor -d 1 2 3 4 5
 
 bspc config border_width         2
-bspc config window_gap          12
+bspc config window_gap           12
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -25,9 +25,13 @@ bspc rule -a Screenkey manage=off
 # Set caps lock to escape
 setxkbmap -option caps:escape
 
-# Theming stuff
-# exec picom --experimental-backends
-feh --bg-fill --no-xinerama ~/.config/bspwm/walls/the_valley.png &
+# startup apps
+pkill pulseaudio & pulseaudio &
+google-chrome-stable &
+alacritty &
 
-polybar &
-MONITOR=HDMI-A-0 polybar &
+# Theming stuff
+picom & # window opacity
+feh --bg-fill --no-xinerama ~/.config/bspwm/walls/the_valley.png & # set background
+polybar &  # open bar on laptop monitor
+MONITOR=HDMI-A-0 polybar & # open bar on main monitor

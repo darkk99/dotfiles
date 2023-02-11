@@ -65,14 +65,14 @@ trap 'timer_start' DEBUG
 PROMPT_COMMAND=timer_stop
 
 # Directory name
-PS1='\n\[\033[01;40m\]\[\033[01;37m\] \w '
+PS1='\n\[\033[40m\]\[\033[37m\] \w '
 # End powerline section
-PS1=$PS1'\[\033[01;100m\]\[\033[01;30m\]'
+PS1=$PS1'\[\033[100m\]\[\033[30m\]'
 # Amount of time last command took
-PS1=$PS1'\[\033[01;37m\] took ${timer_show} '
+PS1=$PS1'\[\033[37m\] took ${timer_show} '
 # Clear background color and text color
-PS1=$PS1'\[\033[01;0m\]'
+PS1=$PS1'\[\033[0m\]'
 # End powerline section
-PS1=$PS1'\[\033[01;95m\]\[\033[01;90m\]'
+PS1=$PS1'\[\033[95m\]\[\033[01;90m\]'
 # Finally, reset colors + end of prompt
-PS1=$PS1'\[\033[01;0m\] '
+PS1=$PS1'\[\033[0m\] '
