@@ -5,7 +5,7 @@ My dotfiles for Gentoo Linux. Comes with Wayland WM configs (eww (bar) hyprland 
 
 ```
 cd
-ln -s dotfiles/.bashrc ./
+ln -s ~/dotfiles/.bashrc ./
 cd ~/.config
 ln -s ~/dotfiles/.config/* ./
 ```
