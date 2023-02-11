@@ -1,7 +1,15 @@
 # ~/.bashrc
+export EDITOR="/usr/bin/nvim"
+export XDG_CONFIG_HOME="/home/dark/.config/"
 
+function swap() {
+  local TMPFILE=tmp.$$
+  mv "$1" $TMPFILE
+  mv "$2" "$1"
+  mv "$TMPFILE" "$2"
+}
 # ls aliases
-alias lls='\ls'
+alias lls='\ls --color=auto'
 alias ls='exa --icons'
 alias la='exa -a --icons'
 alias lt='exa -T --icons'
