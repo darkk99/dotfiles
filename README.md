@@ -1,5 +1,5 @@
-i# dotfiles-crystal
-My dotfiles for Crystal/Arch Linux. Hyprland
+# dotfiles
+My dotfiles for Gentoo Linux. Comes with Wayland WM configs (eww (bar) hyprland (WM))
 
 # **INSTALL**
 
