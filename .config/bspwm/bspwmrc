@@ -25,6 +25,11 @@ bspc rule -a Screenkey manage=off
 # Set caps lock to escape
 setxkbmap -option caps:escape
 
+# tap to click
+synclient TapButton1=1
+synclient TapButton2=3
+synclient TapButton3=2
+
 # startup apps
 pkill pulseaudio & pulseaudio &
 google-chrome-stable &
