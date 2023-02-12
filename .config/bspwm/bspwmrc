@@ -1,42 +1,66 @@
-#!/bin/sh
+#!/usr/bin/luajit
 
+function setconfig()
+  os.execute("echo -n" ..
+    -- start keybind manager
+    "pgrep -x sxhkd > /dev/null || sxhkd " ..
+    -- set workspaces
+    "& bspc monitor -d " ..
+      workspaces ..
+    -- set border config
+    "& bspc config border_width " ..
+      border_width ..
+    "& bspc config focused_border_color " ..
+      focused_border ..
+    "& bspc config borderless_monocle " ..
+      tostring(borderless_fullscreen) ..
+    -- set gap config
+    "& bspc config window_gap " ..
+      gap_size ..
+    "& bspc config gapless_monocle " ..
+      tostring(gapless_fullscreen) ..
+    "& bspc config split_ratio " ..
+      split_ratio ..
+    "&"
+  )
+end
 
-# border colors
-bspc config focused_border_color \#cba6f7
-bspc config normal_border_color \#1e1e2e
+function main()
+  -- Names of workspaces
+  workspaces            = "1 2 3 4 5"
+  -- Border configuration
+  border_width          = 2
+  focused_border        = "\\#cba6f7"
+  borderless_fullscreen = true
+  -- Gaps
+  gap_size              = 12
+  gapless_fullscreen    = true
+  split_ratio           = 0.5
+  -- Set the configuration according to the settings above
+  setconfig()
+  -- Input-related commands
+  os.execute("echo -n " ..
+    "& setxkbmap -option caps:escape " .. -- Caps Lock -> Escape
+    "& synclient TapButton1=1 " ..        -- Touchpad tap with one finger    -> left click
+    "& synclient TapButton2=3 " ..        -- Touchpad tap with two fingers   -> right click
+    "& synclient TapButton3=2 " ..        -- Touchpad tap with three fingers -> middle click
+    "&"
+  )
+  -- Audio
+  os.execute("echo -n " ..
+    "& pulseaudio " ..
+    "&"
+  )
+  -- Theming
+  os.execute("echo -n" ..
+    "& picom " ..
+    "& feh --bg-fill --no-xinerama ~/.config/bspwm/walls/the_valley.png " ..
+    "& polybar " ..
+    "& MONITOR=HDMI-A-0 polybar" ..
+    "&"
+  )
+end
 
-pgrep -x sxhkd > /dev/null || sxhkd &
-
-bspc monitor -d 1 2 3 4 5
-
-bspc config border_width         2
-bspc config window_gap           12
-
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
-
-# Set caps lock to escape
-setxkbmap -option caps:escape
-
-# tap to click
-synclient TapButton1=1
-synclient TapButton2=3
-synclient TapButton3=2
-
-# startup apps
-pkill pulseaudio & pulseaudio &
-google-chrome-stable &
-alacritty &
-
-# Theming stuff
-picom & # window opacity
-feh --bg-fill --no-xinerama ~/.config/bspwm/walls/the_valley.png & # set background
-polybar &  # open bar on laptop monitor
-MONITOR=HDMI-A-0 polybar & # open bar on main monitor
+if (arg ~= nil and arg[-1] ~= nil) then
+  main()
+end
