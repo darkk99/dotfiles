@@ -30,10 +30,8 @@ synclient TapButton1=1
 synclient TapButton2=3
 synclient TapButton3=2
 
-# startup apps
-pkill pulseaudio & pulseaudio &
-google-chrome-stable &
-alacritty &
+# start pulse
+pulseaudio &
 
 # Theming stuff
 picom & # window opacity

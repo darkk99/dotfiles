@@ -7,7 +7,7 @@ super + {u,d}
   {/home/dark/.config/polybar/scripts/brightness.bash +,/home/dark/.config/polybar/scripts/brightness.bash -}
 # terminal emulator
 super + Return
-	alacritty
+  kitty -o "linux_display_server=x11" --single-instance
 
 # program launcher
 super + r
