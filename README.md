@@ -1,5 +1,5 @@
 # dotfiles
-My dotfiles for Gentoo Linux. Comes with Wayland WM configs (eww (bar) hyprland (WM))
+My dotfiles for Linux. Comes with Wayland WM configs (eww (bar) hyprland (WM))
 
 # **INSTALL**
 
