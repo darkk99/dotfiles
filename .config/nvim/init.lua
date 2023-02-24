@@ -1,6 +1,21 @@
 -- ~/.config/nvim/init.lua
+
 os.execute([[ /usr/bin/env bash 'rm ~/.local/state/nvim/*' ]])
 vim.cmd([[
+" Set Clipboard "
+  let g:clipboard = {
+  \   'name': 'myClipboard',
+  \   'copy': {
+  \      '+': ['xclip', '-i', '-selection', 'clipboard'],
+  \      '*': ['xclip', '-i', '-selection', 'clipboard'],
+  \    },
+  \   'paste': {
+  \      '+': ['xclip', '-o', '-selection', 'clipboard'],
+  \      '*': ['xclip', '-o', '-selection', 'clipboard'],
+  \   },
+  \   'cache_enabled': 1,
+  \ }
+
 " Plugins "
   call plug#begin()
   Plug 'tpope/vim-commentary'
@@ -8,11 +23,10 @@ vim.cmd([[
   Plug 'tpope/vim-surround'
   Plug 'jiangmiao/auto-pairs'
   Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'LnL7/vim-nix'
-  Plug 'https://github.com/ellisonleao/gruvbox.nvim'
   Plug 'https://github.com/theHamsta/nvim-semantic-tokens'
   " Plug 'rose-pine/neovim', {'as': 'rose-pine', 'tag': 'v1.*'}
-  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+  "Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+  Plug 'shaunsingh/nord.nvim'
   Plug 'vim-airline/vim-airline'
   call plug#end()
 " Tab Size (2) "
@@ -83,13 +97,32 @@ require("indent_blankline").setup {
 	-- dark_variant = 'moon'
 -- })
 -- vim.cmd [[colorscheme rose-pine]]
-vim.cmd [[colorscheme catppuccin-mocha]]
-require("nvim-semantic-tokens").setup {
-  preset = "default",
-  -- highlighters is a list of modules following the interface of nvim-semantic-tokens.table-highlighter or
-  -- function with the signature: highlight_token(ctx, token, highlight) where
-  --        ctx (as defined in :h lsp-handler)
-  --        token  (as defined in :h vim.lsp.semantic_tokens.on_full())
-  --        highlight (a helper function that you can call (also multiple times) with the determined highlight group(s) as the only parameter)
-  highlighters = { require 'nvim-semantic-tokens.table-highlighter'}
-}
+-- vim.cmd [[colorscheme catppuccin-mocha]]
+vim.cmd [[colorscheme nord]]
+-- require("nvim-semantic-tokens").setup {
+--   preset = "default",
+--   -- highlighters is a list of modules following the interface of nvim-semantic-tokens.table-highlighter or
+--   -- function with the signature: highlight_token(ctx, token, highlight) where
+--   --        ctx (as defined in :h lsp-handler)
+--   --        token  (as defined in :h vim.lsp.semantic_tokens.on_full())
+--   --        highlight (a helper function that you can call (also multiple times) with the determined highlight group(s) as the only parameter)
+--   highlighters = { require 'nvim-semantic-tokens.table-highlighter'}
+-- }
+
+-- set clipboard
+-- if (os.execute("echo $USER") == "root") then
+--   vim.cmd [[
+--     let g:clipboard = {
+--       \   'name': 'myClipboard',
+--       \   'copy': {
+--       \      '+': ['su', '-c', '"xclip', '-i', '-selection', 'clipboard"'],
+--       \      '*': ['su', '-c', '"xclip', '-i', '-selection', 'clipboard"'],
+--       \    },
+--       \   'paste': {
+--       \      '+': ['su', '-c', '"xclip', '-o', '-selection', 'clipboard"'],
+--       \      '*': ['su', '-c', '"xclip', '-o', '-selection', 'clipboard"'],
+--       \   },
+--       \   'cache_enabled': 1,
+--       \ }
+--   ]]
+-- end
