@@ -25,7 +25,7 @@ vim.cmd([[
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'https://github.com/theHamsta/nvim-semantic-tokens'
   " Plug 'rose-pine/neovim', {'as': 'rose-pine', 'tag': 'v1.*'}
-  "Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+  Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'shaunsingh/nord.nvim'
   Plug 'vim-airline/vim-airline'
   call plug#end()
@@ -97,8 +97,8 @@ require("indent_blankline").setup {
 	-- dark_variant = 'moon'
 -- })
 -- vim.cmd [[colorscheme rose-pine]]
--- vim.cmd [[colorscheme catppuccin-mocha]]
-vim.cmd [[colorscheme nord]]
+vim.cmd [[colorscheme catppuccin-mocha]]
+-- vim.cmd [[colorscheme nord]]
 -- require("nvim-semantic-tokens").setup {
 --   preset = "default",
 --   -- highlighters is a list of modules following the interface of nvim-semantic-tokens.table-highlighter or
