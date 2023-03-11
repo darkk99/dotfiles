@@ -8,3 +8,6 @@ git pull
 git add .
 git commit
 git push
+
+echo '' | xclip -i -selection clipboard
+echo '' | wl-copy
