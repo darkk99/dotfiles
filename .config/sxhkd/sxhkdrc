@@ -2,21 +2,24 @@
 # wm independent hotkeys
 #
 
+super + shift + {1-9,0}
+    bspc node -d '^{1-9,10}' --follow
+
 # change brightness
 super + {u,d}
   {/home/dark/.config/polybar/scripts/brightness.bash +,/home/dark/.config/polybar/scripts/brightness.bash -}
+
 # terminal emulator
 super + Return
-  kitty -o "linux_display_server=x11" --single-instance
+  st
 
 # program launcher
 super + r
 	rofi -show drun
 
-# make sxhkd reload its configuration files:
-# super + Escape
-# 	pkill -USR1 -x sxhkd
-
+# type ` key
+super + apostrophe
+	sh -c 'xdotool key grave'
 #
 # bspwm hotkeys
 #

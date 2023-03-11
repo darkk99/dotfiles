@@ -1,3 +1,4 @@
+
 (deflisten workspace "scripts/workspace")
 (defwidget workspaces []
   (literal :content workspace))
@@ -75,10 +76,10 @@
   :exclusive true
   :focusable false
     ; :geometry (geometry :x "12px"
-    :geometry (geometry :x "0px"
+    :geometry (geometry :x "12px"
     :y "0%"
     :width "0%"
-    :height "1080px"
+    :height "1056px"
     :anchor "left center")
   :stacking "fg"
   :reserve (struts :distance "0"
@@ -91,10 +92,10 @@
   :exclusive true
   :focusable false
     ; :geometry (geometry :x "12px"
-    :geometry (geometry :x "6px"
+    :geometry (geometry :x "12px"
     :y "0%"
     :width "0%"
-    :height "1428px"
+    :height "1416px"
     :anchor "left center")
   :stacking "fg"
   :reserve (struts :distance "0"
