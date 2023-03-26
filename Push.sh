@@ -9,5 +9,8 @@ git add .
 git commit
 git push
 
-echo '' | xclip -i -selection clipboard
-echo '' | wl-copy
+if [[ $XDG_SESSION_TYPE == x11 ]]; then
+  echo '' | xclip -i -selection clipboard
+else
+  echo '' | wl-copy
+fi
