@@ -1,21 +1,6 @@
 -- ~/.config/nvim/init.lua
 
-os.execute([[ /usr/bin/env bash 'rm ~/.local/state/nvim/*' ]])
 vim.cmd([[
-" Set Clipboard "
-  let g:clipboard = {
-  \   'name': 'myClipboard',
-  \   'copy': {
-  \      '+': ['xclip', '-i', '-selection', 'clipboard'],
-  \      '*': ['xclip', '-i', '-selection', 'clipboard'],
-  \    },
-  \   'paste': {
-  \      '+': ['xclip', '-o', '-selection', 'clipboard'],
-  \      '*': ['xclip', '-o', '-selection', 'clipboard'],
-  \   },
-  \   'cache_enabled': 1,
-  \ }
-
 " Plugins "
   call plug#begin()
   Plug 'tpope/vim-commentary'
@@ -23,7 +8,7 @@ vim.cmd([[
   Plug 'tpope/vim-surround'
   Plug 'jiangmiao/auto-pairs'
   Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'https://github.com/theHamsta/nvim-semantic-tokens'
+  " Plug 'https://github.com/theHamsta/nvim-semantic-tokens'
   " Plug 'rose-pine/neovim', {'as': 'rose-pine', 'tag': 'v1.*'}
   Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'shaunsingh/nord.nvim'
@@ -108,21 +93,3 @@ vim.cmd [[colorscheme catppuccin-mocha]]
 --   --        highlight (a helper function that you can call (also multiple times) with the determined highlight group(s) as the only parameter)
 --   highlighters = { require 'nvim-semantic-tokens.table-highlighter'}
 -- }
-
--- set clipboard
--- if (os.execute("echo $USER") == "root") then
---   vim.cmd [[
---     let g:clipboard = {
---       \   'name': 'myClipboard',
---       \   'copy': {
---       \      '+': ['su', '-c', '"xclip', '-i', '-selection', 'clipboard"'],
---       \      '*': ['su', '-c', '"xclip', '-i', '-selection', 'clipboard"'],
---       \    },
---       \   'paste': {
---       \      '+': ['su', '-c', '"xclip', '-o', '-selection', 'clipboard"'],
---       \      '*': ['su', '-c', '"xclip', '-o', '-selection', 'clipboard"'],
---       \   },
---       \   'cache_enabled': 1,
---       \ }
---   ]]
--- end

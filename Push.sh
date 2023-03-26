@@ -2,7 +2,7 @@
 # Nothing to see here! This is just a
 # file I use to easily push all my changes
 
-GetToken
+GetToken # script i made to copy my token to clipboard
 
 git pull
 git add .

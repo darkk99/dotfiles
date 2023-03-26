@@ -10,7 +10,8 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d 1 2 3 4 5
 
-bspc config border_width         2
+# bspc config border_width         2
+bspc config border_width         0
 bspc config window_gap           12
 
 bspc config split_ratio          0.52
@@ -33,5 +34,5 @@ pulseaudio &
 # Theming stuff
 picom & # window opacity
 feh --bg-fill --no-xinerama ~/.config/bspwm/walls/the_valley.png & # set background
-polybar &  # open bar on laptop monitor
-MONITOR=HDMI-1 polybar & # open bar on main monitor
+# polybar &  # open bar on laptop monitor
+# MONITOR=HDMI-1 polybar & # open bar on main monitor

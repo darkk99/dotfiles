@@ -1,0 +1,61 @@
+URxvt.lineSpace: 0
+URxvt.geometry: 92x24
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+
+! copy paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
+! set font
+URxvt.iso14755: false
+URxvt.font: xft:FantasqueSansMono Nerd Font:pixelsize=17:antialias=true
+/* urxvt256c-ml*font: xft: FantasqueSansMono Nerd Font Mono:style=Regular:pixelsize=19:antialias=true:autohint=true */
+URxvt.letterSpace: -1
+
+! set padding
+URxvt.borderWidth: 10
+URxvt.internalBorder: 10
+! originally 24
+URxvt.externalBorder: 5
+
+URxvt.background: #1E1E2E
+URxvt.foreground: #CDD6F4
+URxvt.cursorColor: #F5E0DC
+
+! black
+URxvt.color0: #45475A
+URxvt.color8: #585B70
+
+! red
+URxvt.color1: #F38BA8
+URxvt.color9: #F38BA8
+
+! green
+URxvt.color2: #A6E3A1
+URxvt.color10: #A6E3A1
+
+! yellow
+URxvt.color3: #F9E2AF
+URxvt.color11: #F9E2AF
+
+! blue
+URxvt.color4: #89B4FA
+URxvt.color12: #89B4FA
+
+! magenta
+URxvt.color5: #F5C2E7
+URxvt.color13: #F5C2E7
+
+! cyan
+URxvt.color6: #94E2D5
+URxvt.color14: #94E2D5
+
+! white
+URxvt.color7: #BAC2DE
+URxvt.color15: #A6ADC8
