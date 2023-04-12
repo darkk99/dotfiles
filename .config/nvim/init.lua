@@ -10,6 +10,7 @@ vim.cmd([[
   Plug 'lukas-reineke/indent-blankline.nvim'
   " Plug 'https://github.com/theHamsta/nvim-semantic-tokens'
   " Plug 'rose-pine/neovim', {'as': 'rose-pine', 'tag': 'v1.*'}
+  Plug 'nvim-lua/plenary.nvim'
   Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'shaunsingh/nord.nvim'
   Plug 'vim-airline/vim-airline'
@@ -42,15 +43,15 @@ vim.cmd([[
 " Opens new terminal window (vertically split) "
   noremap <C-q> :vs<Enter><C-w>l:term<Enter>
 ]])
-vim.api.nvim_create_autocmd("ColorScheme", {
-  command = [[
-    highlight IndentBlanklineIndent1 guifg=#eb6f92 gui=nocombine
-    highlight IndentBlanklineIndent2 guifg=#f6c177 gui=nocombine
-    highlight IndentBlanklineIndent3 guifg=#9ccfd8 gui=nocombine
-    highlight IndentBlanklineIndent4 guifg=#31748f gui=nocombine
-    highlight IndentBlanklineIndent5 guifg=#c4a7e7 gui=nocombine
-  ]]
-})
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   command = [[
+--     highlight IndentBlanklineIndent1 guifg=#eb6f92 gui=nocombine
+--     highlight IndentBlanklineIndent2 guifg=#f6c177 gui=nocombine
+--     highlight IndentBlanklineIndent3 guifg=#9ccfd8 gui=nocombine
+--     highlight IndentBlanklineIndent4 guifg=#31748f gui=nocombine
+--     highlight IndentBlanklineIndent5 guifg=#c4a7e7 gui=nocombine
+--   ]]
+-- })
 
 vim.g.strip_whitespace_on_save = 1
 vim.g.strip_whitelines_at_eof = 1
@@ -64,7 +65,7 @@ vim.cmd [[highlight IndentBlanklineIndent5 guifg=#c4a7e7 gui=nocombine]]
 
 vim.opt.list = true
 vim.opt.listchars:append("space:·")
--- vim.opt.listchars:append("eol:↴")
+vim.opt.listchars:append("eol:↴")
 
 require("indent_blankline").setup {
   space_char_blankline ="",
@@ -77,19 +78,4 @@ require("indent_blankline").setup {
   },
 }
 
--- Set rose-pine-moon to color theme
--- require('rose-pine').setup({
-	-- dark_variant = 'moon'
--- })
--- vim.cmd [[colorscheme rose-pine]]
 vim.cmd [[colorscheme catppuccin-mocha]]
--- vim.cmd [[colorscheme nord]]
--- require("nvim-semantic-tokens").setup {
---   preset = "default",
---   -- highlighters is a list of modules following the interface of nvim-semantic-tokens.table-highlighter or
---   -- function with the signature: highlight_token(ctx, token, highlight) where
---   --        ctx (as defined in :h lsp-handler)
---   --        token  (as defined in :h vim.lsp.semantic_tokens.on_full())
---   --        highlight (a helper function that you can call (also multiple times) with the determined highlight group(s) as the only parameter)
---   highlighters = { require 'nvim-semantic-tokens.table-highlighter'}
--- }
