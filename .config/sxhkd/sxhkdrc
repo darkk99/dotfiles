@@ -11,22 +11,22 @@ super + {u,d}
 
 # terminal emulator
 super + Return
-  st
+  kitty --single-instance
 
 # program launcher
 super + r
 	rofi -show drun
 
 # type ` key
-super + apostrophe
-	sh -c 'xdotool key grave'
+# super + apostrophe
+# 	sh -c 'xdotool key grave'
 #
 # bspwm hotkeys
 #
 
 # quit/restart bspwm
 super + shift + {e,r}
-	bspc {quit,wm -r; pkill -USR1 -x sxhkd}
+	bspc {quit,wm -r && pkill sxhkd; sxhkd}
 
 # close and kill
 super + shift + q

@@ -32,7 +32,7 @@ synclient TapButton3=2
 pulseaudio &
 
 # Theming stuff
-picom & # window opacity
+picom --experimental-backends & # window opacity
 feh --bg-fill --no-xinerama ~/.config/bspwm/walls/the_valley.png & # set background
-# polybar &  # open bar on laptop monitor
-# MONITOR=HDMI-1 polybar & # open bar on main monitor
+polybar &  # open bar on laptop monitor
+MONITOR=HDMI-1 polybar & # open bar on main monitor
