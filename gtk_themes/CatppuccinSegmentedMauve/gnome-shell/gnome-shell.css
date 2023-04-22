@@ -17,6 +17,7 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
  */
+
 /* General Typography */
 .quick-toggle-menu .header .title {
   font-weight: 700;
@@ -2168,6 +2169,7 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
 .osd-window {
   text-align: center;
   font-weight: bold;
+  
 }
 
 .osd-window .osd-monitor-label {
@@ -2475,18 +2477,18 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   background-color: #11111b;
   color: rgba(205, 214, 244, 1.0);
   transition-duration: 150ms;
-  border-radius: 9999px;
+  border-radius: 60px;
   text-shadow: none;
 
   margin: 5px 5px 5px 5px;
 
-  border: 2px solid transparent;
+  border: 2px solid #cba6f7;
 }
 
 #panel .panel-button.clock-display .clock {
   transition-duration: 150ms;
-  border: 2px solid transparent;
-  border-radius: 9999px;
+  /* border: 2px solid #cba6f7; */
+  border-radius: 60px;
 }
 
 #panel .panel-button:hover {

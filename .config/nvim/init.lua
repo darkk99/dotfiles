@@ -3,6 +3,7 @@
 vim.cmd([[
 " Plugins "
   call plug#begin()
+  Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-commentary'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'tpope/vim-surround'
@@ -10,6 +11,7 @@ vim.cmd([[
   Plug 'lukas-reineke/indent-blankline.nvim'
   " Plug 'https://github.com/theHamsta/nvim-semantic-tokens'
   " Plug 'rose-pine/neovim', {'as': 'rose-pine', 'tag': 'v1.*'}
+  Plug 'morhetz/gruvbox'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'shaunsingh/nord.nvim'
@@ -23,12 +25,13 @@ vim.cmd([[
 " Appearance "
   let &t_ut=''
   let g:airline_powerline_fonts = 1
-  set background=dark
   set termguicolors
   set number
   set showcmd
   set encoding=utf-8
   set relativenumber
+  let g:airline_left_sep = "\uE0BC"
+  let g:airline_right_sep = "\uE0BA"
 " Disable C-Z "
   noremap <C-z> <Nop>
 " Better j and k "
@@ -54,7 +57,7 @@ vim.cmd([[
 -- })
 
 vim.g.strip_whitespace_on_save = 1
-vim.g.strip_whitelines_at_eof = 1
+vim.g.strip_whitelines_at_eof = 0
 vim.g.fzf_preview_window = {}
 
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#eb6f92 gui=nocombine]]
@@ -79,3 +82,4 @@ require("indent_blankline").setup {
 }
 
 vim.cmd [[colorscheme catppuccin-mocha]]
+-- vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]

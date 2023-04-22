@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 if [ -f /sys/class/backlight/amdgpu_bl0/brightness ]; then
   brightness=/sys/class/backlight/amdgpu_bl0/brightness
 else

@@ -1,8 +1,14 @@
 # ~/.bashrc
+HISTFILE=~/.zsh_history
+HISTSIZE=500000
+SAVEHIST=500000
+setopt appendhistory
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
 
-autoload -U colors && colors
 export EDITOR="/usr/bin/nvim"
 export XDG_CONFIG_HOME="/home/dark/.config/"
+
 function swap() {
   local TMPFILE=tmp.$$
   mv "$1" $TMPFILE
@@ -14,7 +20,9 @@ alias lls='\ls --color=auto'
 alias ls='exa --icons'
 alias la='exa -a --icons'
 alias lt='exa -T --icons'
-alias lat='exa -aT --icons' # copy to clipboard alias clip='xclip -i -selection clipboard'
+alias lat='exa -aT --icons'
+# copy to clipboard
+alias clip='xclip -i -selection clipboard'
 copy() {
   if [[ ! -e "$*" ]]; then
     echo "$*: Does not exist"
@@ -23,21 +31,30 @@ copy() {
     echo "$*: Is a directory"
     return 1;
   else
-    cat $* | wl-copy
+    cat $* | clip
   fi
 }
 # refresh .bashrc
 alias rl="source ~/.bashrc"
 
 # Prompt
-setPrompt() {
-    PS1=$'\033[30m\033[40m\033[37m'$(pwd)' '
-    PS1=$PS1$'\033[100m\033[30m'
-    PS1=$PS1$'\033[37m took '$1'ms '
-    PS1=$PS1$'\033[0m'
-    PS1=$PS1$'\033[95m\033[01;90m'
-    PS1=$PS1$'\033[0m '
+#
+autoload -U colors && colors
+betterPWD() {
+  [[ "$(basename $PWD)" == "$USER" ]] && echo '~' || echo "$(basename $PWD)"
 }
+
+setPrompt() {
+  PS1=$'\033[30m\033[40m\033[37m '$(betterPWD)' '
+  PS1=$PS1$'\033[100m\033[30m'
+  PS1=$PS1$'\033[37m took '$1'ms '
+  PS1=$PS1$'\033[31m%(?..[%?] )'
+  PS1=$PS1$'\033[0m'
+  PS1=$PS1$'\033[95m\033[01;90m'
+  PS1=$PS1$'\033[0m'
+  PS1=$PS1$'\n '
+}
+
 
 function preexec() {
   timer=$(($(date +%s%0N)/1000000))
