@@ -11,7 +11,7 @@ vim.cmd([[
   Plug 'lukas-reineke/indent-blankline.nvim'
   " Plug 'https://github.com/theHamsta/nvim-semantic-tokens'
   " Plug 'rose-pine/neovim', {'as': 'rose-pine', 'tag': 'v1.*'}
-  Plug 'morhetz/gruvbox'
+  " Plug 'morhetz/gruvbox'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'shaunsingh/nord.nvim'
@@ -81,5 +81,6 @@ require("indent_blankline").setup {
   },
 }
 
-vim.cmd [[colorscheme catppuccin-mocha]]
+-- vim.cmd [[colorscheme catppuccin-mocha]]
+vim.cmd [[colorscheme nord]]
 -- vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]

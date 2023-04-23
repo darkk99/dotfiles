@@ -1,3 +1,4 @@
+#vim ft=sh
 ignore-empty-password
 disable-caps-lock-text
 image=/home/dark/.config/hypr/walls/the_valley.png
@@ -25,8 +26,8 @@ caps-lock-key-hl-color=00000000
 separator-color=00000000
 
 scaling=fill
-indicator
-clock
+# indicator
+# clock
 timestr=%I:%M %p
 datestr=%A, %d %B
 # indicator-x-position=400
