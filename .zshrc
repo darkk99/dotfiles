@@ -15,6 +15,9 @@ function swap() {
   mv "$2" "$1"
   mv "$TMPFILE" "$2"
 }
+# better cat
+alias ccat='\cat'
+alias cat='pygmentize -g'
 # ls aliases
 alias lls='\ls --color=auto'
 alias ls='exa --icons'
@@ -31,7 +34,7 @@ copy() {
     echo "$*: Is a directory"
     return 1;
   else
-    cat $* | clip
+    \cat $* | clip
   fi
 }
 # refresh .bashrc
@@ -48,12 +51,11 @@ setPrompt() {
   PS1=$'%(?..%K{red}%F{white} %? %F{red}%K{blue})'
   PS1=$PS1$'%F{blue}%K{blue}%F{white} '$(betterPWD)' '
   PS1=$PS1$'%K{black}%F{blue}'
-  PS1=$PS1$'\033[37m took '$1'ms '
+  PS1=$PS1$'%F{white} took '$1'ms '
   PS1=$PS1$'%f'
   PS1=$PS1$'%F{black}%K{blue}'
   PS1=$PS1$'%K{blue}%F{white} $ %f%k%F{blue}%f%k '
-  # PS1=$PS1$'\033[0m'
-  # PS1=$PS1$'\n '
+  # PS1=$PS1"\n%f%k "
 }
 
 
@@ -77,4 +79,4 @@ fi
 
 source /etc/zsh_command_not_found
 source /home/dark/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /home/dark/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/dark/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
