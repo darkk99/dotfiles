@@ -45,14 +45,15 @@ betterPWD() {
 }
 
 setPrompt() {
-  PS1=$'\033[30m\033[40m\033[37m '$(betterPWD)' '
-  PS1=$PS1$'\033[100m\033[30m'
+  PS1=$'%(?..%K{red}%F{white} %? %F{red}%K{blue})'
+  PS1=$PS1$'%F{blue}%K{blue}%F{white} '$(betterPWD)' '
+  PS1=$PS1$'%K{black}%F{blue}'
   PS1=$PS1$'\033[37m took '$1'ms '
-  PS1=$PS1$'\033[31m%(?..[%?] )'
-  PS1=$PS1$'\033[0m'
-  PS1=$PS1$'\033[95m\033[01;90m'
-  PS1=$PS1$'\033[0m'
-  PS1=$PS1$'\n '
+  PS1=$PS1$'%f'
+  PS1=$PS1$'%F{black}%K{blue}'
+  PS1=$PS1$'%K{blue}%F{white} $ %f%k%F{blue}%f%k '
+  # PS1=$PS1$'\033[0m'
+  # PS1=$PS1$'\n '
 }
 
 
