@@ -1,0 +1,8 @@
+#!/bin/bash
+
+function battery {
+  percent=$(cat /sys/class/power_supply/BAT0/capacity)
+  echo "(box :class \"battery\" :valign \"end\" (button :class \"battery-percent\" \"$percent%\"))"
+}
+
+battery

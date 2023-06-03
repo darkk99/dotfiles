@@ -7,11 +7,9 @@ vim.cmd([[
   Plug 'tpope/vim-commentary'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'tpope/vim-surround'
+  Plug 'vim-airline/vim-airline-themes'
   Plug 'jiangmiao/auto-pairs'
   Plug 'lukas-reineke/indent-blankline.nvim'
-  " Plug 'https://github.com/theHamsta/nvim-semantic-tokens'
-  " Plug 'rose-pine/neovim', {'as': 'rose-pine', 'tag': 'v1.*'}
-  " Plug 'morhetz/gruvbox'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
   Plug 'shaunsingh/nord.nvim'
@@ -32,6 +30,7 @@ vim.cmd([[
   set relativenumber
   let g:airline_left_sep = "\uE0BC"
   let g:airline_right_sep = "\uE0BA"
+  let g:airline_theme = 'base16_dracula'
 " Disable C-Z "
   noremap <C-z> <Nop>
 " Better j and k "
@@ -81,6 +80,15 @@ require("indent_blankline").setup {
   },
 }
 
--- vim.cmd [[colorscheme catppuccin-mocha]]
-vim.cmd [[colorscheme nord]]
--- vim.cmd [[highlight Normal guibg=NONE ctermbg=NONE]]
+vim.cmd [[colorscheme catppuccin-frappe]]
+
+-- vim.cmd [[
+--   colorscheme nord
+--   highlight Normal guibg=NONE ctermbg=NONE
+--   highlight CursorColumn cterm=NONE ctermbg=NONE ctermfg=NONE
+--   highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE
+--   highlight CursorLineNr cterm=NONE ctermbg=NONE ctermfg=NONE
+--   highlight clear LineNr
+--   highlight clear SignColumn
+--   highlight clear StatusLine
+-- ]]

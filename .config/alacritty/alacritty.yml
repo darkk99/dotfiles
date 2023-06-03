@@ -1,121 +1,44 @@
-# colors:
-#   primary:
-#     background: "#1E1E2E" # base
-#     foreground: "#CDD6F4" # text
-#     # Bright and dim foreground colors
-#     dim_foreground: "#CDD6F4" # text
-#     bright_foreground: "#CDD6F4" # text
-
-#   # Cursor colors
-#   cursor:
-#     text: "#1E1E2E" # base
-#     cursor: "#F5E0DC" # rosewater
-#   vi_mode_cursor:
-#     text: "#1E1E2E" # base
-#     cursor: "#B4BEFE" # lavender
-
-#   # Search colors
-#   search:
-#     matches:
-#       foreground: "#1E1E2E" # base
-#       background: "#A6ADC8" # subtext0
-#     focused_match:
-#       foreground: "#1E1E2E" # base
-#       background: "#A6E3A1" # green
-#     footer_bar:
-#       foreground: "#1E1E2E" # base
-#       background: "#A6ADC8" # subtext0
-
-#   # Keyboard regex hints
-#   hints:
-#     start:
-#       foreground: "#1E1E2E" # base
-#       background: "#F9E2AF" # yellow
-#     end:
-#       foreground: "#1E1E2E" # base
-#       background: "#A6ADC8" # subtext0
-
-#   # Selection colors
-#   selection:
-#     text: "#1E1E2E" # base
-#     background: "#F5E0DC" # rosewater
-
-#   # Normal colors
-#   normal:
-#     black: "#45475A" # surface1
-#     red: "#F38BA8" # red
-#     green: "#A6E3A1" # green
-#     yellow: "#F9E2AF" # yellow
-#     blue: "#89B4FA" # blue
-#     magenta: "#F5C2E7" # pink
-#     cyan: "#94E2D5" # teal
-#     white: "#BAC2DE" # subtext1
-
-#   # Bright colors
-#   bright:
-#     black: "#585B70" # surface2
-#     red: "#F38BA8" # red
-#     green: "#A6E3A1" # green
-#     yellow: "#F9E2AF" # yellow
-#     blue: "#89B4FA" # blue
-#     magenta: "#F5C2E7" # pink
-#     cyan: "#94E2D5" # teal
-#     white: "#A6ADC8" # subtext0
-
-#   # Dim colors
-#   dim:
-#     black: "#45475A" # surface1
-#     red: "#F38BA8" # red
-#     green: "#A6E3A1" # green
-#     yellow: "#F9E2AF" # yellow
-#     blue: "#89B4FA" # blue
-#     magenta: "#F5C2E7" # pink
-#     cyan: "#94E2D5" # teal
-#     white: "#BAC2DE" # subtext1
-
-#   indexed_colors:
-#     - { index: 16, color: "#FAB387" }
-#     - { index: 17, color: "#F5E0DC" }
-
 colors:
-  # Default colors
   primary:
-    background: '#333333'
-    foreground: '#F2F2F2'
-
-  # Normal colors
+    background: "#161616"
+    foreground: "#ffffff"
+  search:
+    matches:
+      foreground: CellBackground
+      background: '#ee5396'
+    footer_bar:
+      background: '#262626'
+      foreground: '#ffffff'
   normal:
-    black:   '#666666'
-    red:     '#CC0000'
-    green:   '#4E9A06'
-    yellow:  '#C4A000'
-    blue:    '#3465A4'
-    magenta: '#75507B'
-    cyan:    '#06989A'
-    white:   '#D3D7CF'
-
-  # Bright colors
+    black: "#262626"
+    magenta: "#ff7eb6"
+    green: "#42be65"
+    yellow: "#ffe97b"
+    blue: "#33b1ff"
+    red: "#ee5396"
+    cyan: "#3ddbd9"
+    white: "#dde1e6"
   bright:
-    black:   '#88807C'
-    red:     '#F15D22'
-    green:   '#73C48F'
-    yellow:  '#FFCE51'
-    blue:    '#48B9C7'
-    magenta: '#AD7FA8'
-    cyan:    '#34E2E2'
-    white:   '#EEEEEC'
+    black: "#393939"
+    magenta: "#ff7eb6"
+    green: "#42be65"
+    yellow: "#ffe97b"
+    blue: "#33b1ff"
+    red: "#ee5396"
+    cyan: "#3ddbd9"
+    white: "#ffffff"
 
 font:
   normal:
-    family: TerminessTTF Nerd Font
+    family: Terminus
     style: Regular
-  bold:
-    family: TerminessTTF Nerd Font
-    style: Bold
-  italic:
-    family: TerminessTTF Nerd Font
-    style: Italic
-  size: 13
+  # bold:
+    # family: Terminus
+    # style: Bold
+  # italic:
+    # family: Terminus
+    # style: Italic
+  size: 11
 
 window:
   padding:

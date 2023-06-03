@@ -1,0 +1,5 @@
+if [ "$(hyprctl devices | grep active | grep Dvorak)" == "" ]; then
+  echo "QW"
+else
+  echo "DV"
+fi

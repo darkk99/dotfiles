@@ -1,0 +1,15 @@
+#!/bin/bash
+
+batteryFile='/sys/class/power_supply/BAT0/capacity'
+
+function battery {
+  if [ -z $batteryFile ]; then
+    percent=$(cat /sys/class/power_supply/BAT0/capacity)
+  else
+    percent=none
+  fi
+
+  echo "(box :class \"battery\" :valign \"end\" (button :class \"battery-percent\" \"$percent%\"))"
+}
+
+battery

@@ -2480,14 +2480,16 @@ StEntry StLabel.hint-text, .popup-menu .search-entry StLabel.hint-text {
   border-radius: 60px;
   text-shadow: none;
 
-  margin: 5px 5px 5px 5px;
+  /* margin: 5px 5px 5px 5px; */
 
   border: 2px solid #cba6f7;
 }
 
 #panel .panel-button.clock-display .clock {
   transition-duration: 150ms;
-  /* border: 2px solid #cba6f7; */
+  border: 2px solid #cba6f7; */
+  margin: 5px 5px 5px 5px;
+  bottom: 55555px;
   border-radius: 60px;
 }
 
